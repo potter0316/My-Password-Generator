@@ -1,18 +1,17 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword(){
-  var length = window.prompt("choose password length between 8 and 128")
-  char = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ"
-  num = "1234567890"
-  character = "!@#$%^&*()";
-  passwordText = [""]
-   for(i=0;i < length; i++){
-     passwordText += char.charAt(Math.floor(Math.random() * char.length))
-     
-  }
-  return passwordText;
-  };
+var alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var specialChar = ["!", "%", "&", ",", "*", "+", "-", ".", "/", "<", ">", "?","~"];
+
+var length = "";
+var upperCase;
+var lowerCase;
+var specialCharacter;
+var num;
+
   
 // Write password to the #password input
 function writePassword() {
