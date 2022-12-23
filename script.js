@@ -33,7 +33,35 @@ function generatePassword() {
     var lowerCase = confirm("Would you like to add lowercase characters?");
     var upperCase = confirm("Would you like to add uppercase characters?");
   }
-  
+  var passwordOutputs = []
+      
+  if (specialCharacter) {
+    passwordOutputs = passwordOutputs.concat(specialChar)
+  }
+
+  if (num) {
+    passwordOutputs = passwordOutputs.concat(number)
+  }
+      
+  if (lowerCase) {
+    passwordOutputs = passwordOutputs.concat(alphaLower)
+  }
+
+  if (upperCase) {
+    passwordOutputs = passwordOutputs.concat(alphaUpper)
+  }
+
+  console.log(passwordOutputs)
+
+  var passwordText = [""]
+      
+      for (var i = 0; i < length; i++) {
+        passwordText = passwordText + passwordOutputs[Math.floor(Math.random() * passwordOutputs.length)];
+        console.log(passwordText)
+      }
+      return passwordText;
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
